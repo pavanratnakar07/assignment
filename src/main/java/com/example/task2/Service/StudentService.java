@@ -28,8 +28,9 @@ public class StudentService {
 
     public Student addSubjectsToStudent(Long studentId, List<Subject> subjects) {
         Student student = studentRepository.findById(studentId)
-                .orElseThrow(() -> new RuntimeException("Student not found"));
+                .orElse(null);
         student.getSubjects().addAll(subjects);
         return studentRepository.save(student);
     }
+
 }

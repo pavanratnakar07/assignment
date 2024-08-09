@@ -5,6 +5,8 @@ import com.example.task2.Entity.Subject;
 import com.example.task2.Service.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +21,7 @@ public class StudentController {
 
     @GetMapping
     public List<Student> getAllStudents() {
+
         return studentService.getAllStudents();
     }
 
@@ -28,8 +31,9 @@ public class StudentController {
     }
 
     @PostMapping("/{studentId}/subjects")
-    public Student addSubjectsToStudent(@PathVariable Long studentId, @RequestBody List<Subject> subjects) {
-        return studentService.addSubjectsToStudent(studentId, subjects);
+    public ResponseEntity<?> addSubjectsToStudent(@PathVariable Long studentId, @RequestBody List<Subject> subjects) {
+         studentService.addSubjectsToStudent(studentId, subjects);
+         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
 
