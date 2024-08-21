@@ -1,6 +1,6 @@
 package com.example.task2.Controller;
 
-import com.example.task2.Entity.Student;
+
 import com.example.task2.Entity.Subject;
 import com.example.task2.Service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,4 +68,6 @@ public class SubjectController {
     public Subject createSubject(@RequestBody Subject subject) {
         return subjectService.addSubject(subject);
     }
+    //Get students associated with a subject
+   
 }

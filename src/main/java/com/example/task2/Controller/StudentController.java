@@ -25,7 +25,7 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
-    @PostMapping
+    @PostMapping("save")
     public Student createStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
     }
@@ -35,5 +35,7 @@ public class StudentController {
          studentService.addSubjectsToStudent(studentId, subjects);
          return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+
 }
 
