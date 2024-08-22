@@ -69,7 +69,5 @@ public class SubjectController {
         return subjectService.addSubject(subject);
     }
 
-    //hows the data
-    //Get students associated with a subject
    
 }

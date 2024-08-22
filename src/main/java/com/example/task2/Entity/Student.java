@@ -16,6 +16,19 @@ public class Student {
     private Long id;
     private String name;
     private String address;
+    private String city;
+
+    public Student(String city) {
+        this.city = city;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JsonIgnore
